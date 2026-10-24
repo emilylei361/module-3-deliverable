@@ -25,11 +25,11 @@
                     <!-- <p class="help">Replace or extend this group based on your justified field inventory.</p> -->
                     <div class="field">
                         <label for="first-name">First Name (required)</label>
-                        <input id="first-name" name="first-name" type="text" autocomplete="name" inputmode = "text" required>
+                        <input id="first-name" name="first-name" type="text" autocomplete="first-name" inputmode = "text" maxlength="50" required>
                     </div>
                     <div class="field">
                         <label for="last-name">Last Name (required)</label>
-                        <input id="last-name" name="last-name" type="text" autocomplete="name" inputmode = "text" required>
+                        <input id="last-name" name="last-name" type="text" autocomplete="last-name" inputmode = "text" maxlength="50" required>
                     </div>
                     <div class="field">
                         <label for="email">Email address (required)</label>
@@ -103,7 +103,7 @@
                     <div class="field">
                         <p>Please upload your speech as a file (only .pdf, .docx. or .doc file types accepted).</p>
                         <label for="user-file">
-                        <input type="file" id="user-file" name="user-file" accept="pdf,.doc,.docx,application/pdf,application/doc,application/docx" required> 
+                        <input type="file" id="user-file" name="user-file" accept=".pdf,.doc,.docx" required> 
                         </label> 
                     </div>
                 </fieldset>
