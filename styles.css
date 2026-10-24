@@ -1,8 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
 :root{
-    --color-text:#404040;
+     /* Web font: Quicksand font
+    * Source: Google Fonts (variable)
+    * License: SIL Open Font License 1.1 (OFL-1.1)
+    * Available weights: 300-700
+    * Available styles: Italic, Normal 
+    * Font files: files are downloaded from Google Fonts
+    * External service requests: Requests Quicksand font style sheet from Google Fonts*/
+
+    /* Web font: Krona One font
+    * Source: Google Fonts (static)
+    * License: SIL Open Font License 1.1 (OFL-1.1)
+    * Available weights: 400
+    * Available styles: Normal 
+    * Font files: files are downloaded from Google Fonts
+    * External service requests: Requests Krona One font style sheet from Google Fonts */ 
+
+    /*Used for paragraphs*/
+    --font-body: "Quicksand", "Times New Roman", Helvetica, sans-serif;
+    /*Used for headings, subheadings, titles, nav links*/
+    --font-display: "Krona One", "Times New Roman", Helvetica, serif;
+
+        /*Sets basic font size, 16px*/
+    --base-font-size: 1rem;
+    /*Sets base line height, adds enough space*/
+    --line-height: 1.6; 
+
+    --step--1: .875rem; 
+    --step-0: 1rem;
+    --step-1: 1.25rem;
+    --step-2: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+    --step-3: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+
+    --space-card: 1rem;
+    /* extra --radius-card: .5rem; */
+
+    --leading-body: 1.6;
+    --measure: 68ch;
+
+    --color-text:#1f1f1f;
     --color-surface:#fff;
-    --color-action:#8c1d40;
-    --color-accent:#ffc627;
+    --primary-gradient: linear-gradient(135deg, var(--color-action), var(--color-accent1),var(--color-accent2));
+    --color-action:#007501;
+    --color-accent1:#f4b31c;
+    --color-accent2:#c20000;
     --color-border:#747474;
     --color-error:#b3261e;
     --color-muted:#5c6670;
@@ -11,27 +53,65 @@
     --measure:68ch;
 }
 *,*::before,*::after{
-    box-sizing:border-box;
+    /* outline: 1px solid red !important;*/
+    /* makes more intuitive sizing model for all elements*/ 
+    box-sizing: border-box; 
+    /* removes any default margins*/
+    margin: 0; 
+    /* removes any default padding*/
+    padding: 0; 
+    /* removes any default borders*/
+    border: 0; 
+    /* increases legibility of text, makes it look less cramped*/
+    line-height: 1.6;
 }
 body{
     margin:0;
     color:var(--color-text);
     background:var(--color-surface);
-    font-family:Arial,sans-serif;
+    font-family:var(--font-body);
     line-height:1.6;
+}
+h1{
+    width: fit-content;
+    font-family:var(--font-display);
+    background:var(--color-action);
+    padding: 0.5rem 1rem;
 }
 .page-header{
     padding:clamp(2rem,6vw,5rem);
-    background:var(--color-action);
     color:#fff;
+    overflow: hidden;
+    isolation: isolate;
+    position:relative;
+
 }
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;                 
+  background: url("black-african-celebration-hero-img.png") center / cover no-repeat;
+  opacity: 0.7;             
+  z-index: -1;
+} 
+
 .eyebrow{
-    color:var(--color-accent);
+    width: fit-content;
+    color:var(--color-text);
+    background:var(--color-accent1);
     font-weight:700;
+    padding: 1rem;
+    margin: 1rem 0;
 }
 .lede{
+    width: fit-content;
     max-width:var(--measure);
     font-size:1.25rem;
+    background:var(--color-accent1);
+    color:var(--color-text);
+    padding: 1rem;
+    margin: 1rem 0;
 }
 main{
     max-width:52rem;
@@ -39,24 +119,56 @@ main{
     padding:var(--space-3);
 }
 section,form{
-    margin-block:2rem;
+    margin-block:1rem;
+}
+.F1{
+    display:grid;
+    gap:.65rem;
+   /* padding: 1rem; */
 }
 form,fieldset,.field{
     display:grid;
     gap:.65rem;
+    padding: 1rem;
+}
+.field{
+    padding:0.5rem;
 }
 form{
     gap:1.5rem;
 }
-fieldset{
+/* fieldset{
     padding:1rem;
-    border:1px solid #d0d0d0;
+    border:2px solid;
+    border-image:var(--primary-gradient) 1;
     border-radius:var(--radius);
+} */
+fieldset {
+  border: 3px solid transparent;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+    var(--primary-gradient) border-box;
+}
+label[for="confirmation"],label[for="undergrad-degree"],label[for="grad-degree"]{
+    font-weight: normal;
+}
+.confirmation-field{
+    display:flex;
+    justify-content: center;
+    gap:0.5rem;
 }
 legend,label{
     font-weight:700;
 }
-.help{
+legend, h2{
+    font-family: var(--font-display);
+    background:var(--color-action);
+    border-radius:var(--radius);
+    color:var(--color-surface);
+    padding: 0.5rem 1rem;
+}
+.f{
     margin:0;
     color:var(--color-muted);
 }
@@ -84,18 +196,27 @@ textarea{
     block-size:1.25rem;
 }
 button{
-    justify-self:start;
-    min-height:44px;
+    justify-self:center;
+    min-height:60px;
     padding:.75rem 1rem;
     background:var(--color-action);
-    color:#fff;
+    color:var(--color-surface);
     border:2px solid var(--color-action);
     border-radius:.25rem;
     font-weight:700;
 }
 :focus-visible{
-    outline:.2rem solid var(--color-accent);
+    outline:.2rem solid var(--color-action);
     outline-offset:.2rem;
+}
+#states{
+    display:grid;
+    gap:.65rem;
+    padding: 1rem;
+}
+#states h2{
+    background-color:var(--color-accent1);
+    color: var(--color-text);
 }
 .error-summary,.field-error{
     padding:1rem;
@@ -109,6 +230,7 @@ button:disabled{
     opacity:.55;
     cursor:not-allowed;
 }
+
 @media (min-width:48rem){
     .paired-fields{
         display:grid;

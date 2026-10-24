@@ -7,42 +7,115 @@
     </head>
     <body>
         <header class="page-header">
-            <p class="eyebrow">Application, Registration, or Request</p>
-            <h1>Replace with a specific task title</h1>
-            <p class="lede">Explain who this form is for, what it accomplishes, how long it takes, and what happens after submission.</p>
+            <!-- <p class="eyebrow">Interested in being a Student Speaker at the Fall 2026 Special Interest Celebrations?</p> -->
+            <p class="eyebrow">Friday, Dec. 11, 2026 | Student Pavilion, Tempe campus</p>
+            <h1>Student Speaker Application Form</h1>
+            <p class="lede">Changemaker Initiatives @ ASU and the 4 following coalitions (CIS, BAC, Rainbow, and AAPASC) are welcoming student speaker applications for the Fall 2026 Special Interest Celebrations. If you are graduating in December/Fall 2026 and have a speech that you believe reflects the value of your education, embodies the shared experiences of your peers, and represents your personal journey here at ASU, please feel free to apply below! <strong>The deadline to submit this form is Monday, November 9th, 2026 at 11:59 PST.</strong></p>
         </header>
         <main>
             <section id="expectations">
-                <h2>F1 · Purpose and Expectations</h2>
-                <p>State the required/optional convention and a concise privacy notice. Use fictional test data only.</p>
+                <div class="F1">
+                    <h2>F1 · Form Submission Disclaimer</h2>
+                    <p>By submitting this form you are agreeing to have your name, e-mail, and academic information shared with the Changemaker Initiatives staff committee. All submissions are confidential and only shared with Changemaker Initiatives staff unless otherwise notified.</p>
+                </div>
             </section>
             <form action="" method="get">
                 <fieldset>
                     <legend>F3 · Contact information</legend>
-                    <p class="help">Replace or extend this group based on your justified field inventory.</p>
+                    <!-- <p class="help">Replace or extend this group based on your justified field inventory.</p> -->
                     <div class="field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name">
+                        <label for="first-name">First Name (required)</label>
+                        <input id="first-name" name="first-name" type="text" autocomplete="name" inputmode = "text" required>
+                    </div>
+                    <div class="field">
+                        <label for="last-name">Last Name (required)</label>
+                        <input id="last-name" name="last-name" type="text" autocomplete="name" inputmode = "text" required>
                     </div>
                     <div class="field">
                         <label for="email">Email address (required)</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required>
+                        <input id="email" name="email" type="email" autocomplete="email" inputmode = "email" required>
+                    </div>
+                    <div class="field">
+                        <label for="pronouns">Pronouns (Optional)</label>
+                        <select id="pronouns" name="pronouns">
+                            <option value="">Select</option>
+                            <option value="she/her">She/Her</option>
+                            <option value="he/him">He/Him</option>
+                            <option value="they/them">They/Them</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                            <option value="other">Other</option>
+                        </select>        
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>F3 · Request choices</legend>
-                    <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
-                    <label class="choice">
-                        <input type="radio" name="request_type" value="option-a"> Replace with option A</label>
-                        <label class="choice"><input type="radio" name="request_type" value="option-b"> Replace with option B</label>
-                    </fieldset>
-                    <div class="field">
-                        <label for="details">Request details</label>
-                        <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
-                        <textarea id="details" name="details" aria-describedby="details-help"></textarea>
+                    <legend>F3 · Graduation Date Confirmation</legend>
+                    <p>I confirm that I am graduating in December/Fall 2026. I understand that by selecting this Changemaker Initiatives Staff will conduct an academic check to confirm my graduation date.</p>
+                    <div class="confirmation-field">
+                        <input type="checkbox" id="confirmation" name="user-confirmation" value="yes" required>
+                        <label for="confirmation">Yes, I confirm.</label>                     
                     </div>
-                    <button type="submit">Replace with a specific action</button>
-                </form>
+                    <!-- <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p> -->
+                </fieldset>
+                <fieldset>
+                    <legend>F3 · Celebration Selection</legend>
+                    <p>Select which celebration you are most interested in AND available for student speaker:</p>
+                    <label class="choice">
+                        <input type="radio" id="CIS" name="celebration" value="CIS" required>
+                        CIS (Coalition of International Students) : December 11, 2026 | 10:30am
+                    </label>
+                    <label class="choice">
+                        <input type="radio" id="BAC" name="celebration" value="BAC">
+                        BAC (Black African Coalition) :  December 11, 2026 |  1:30pm
+                    </label>
+                    <label class="choice">
+                        <input type="radio" id="Rainbow" name="celebration" value="Rainbow">
+                        Rainbow Coalition :  December 11, 2026 | 4:00pm
+                    </label>
+                    <label class="choice">
+                        <input type="radio" id="AAPASC" name="celebration" value="AAPASC">
+                        AAPASC (Asian/Asian Pacific American Coalition) :  December 11, 2026 | 6:30pm
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>F3 · Academic Information</legend>
+                    <div class="field">
+                        <label>Which degree type are you graduating with? (required)</label>
+                        <label for="undergrad-degree">
+                            <input type="radio" id="undergrad-degree" name="degree" value="undergrad-degree" required>
+                            Undergraduate degree
+                        </label>
+                        <label for="grad-degree">
+                            <input type="radio" id="grad-degree" name="degree" value="grad-degree">
+                            Graduate degree
+                        </label> 
+                    </div>
+                    <div class="field">
+                        <label for="major">What is/are your major(s)? (Required)</label>
+                        <input id="major" name="user-majors" type="text" inputmode = "text" maxlength = "60" required>
+                    </div>
+                    <div class="field">
+                        <label for="minor">What is/are your minor(s)? (Optional)</label>
+                        <input id="minor" name="user-minors" type="text" inputmode = "text">
+                    </div>
+                </fieldset>    
+                <fieldset>
+                    <legend>F3 · Speech Submission</legend>
+                    <div class="field">
+                        <p>Please upload your speech as a file (only .pdf, .docx. or .doc file types accepted).</p>
+                        <label for="user-file">
+                        <input type="file" id="user-file" name="user-file" accept="pdf,.doc,.docx,application/pdf,application/doc,application/docx" required> 
+                        </label> 
+                    </div>
+                </fieldset>
+              
+                <fieldset>  
+                        <label for="user-comments">Questions, Comments, or Concerns?</label>
+                        <p class="help" id="textarea-help">Please write any questions, comments, or concerns regarding the event or this form. A Changemaker Initiatives staff member will reach back via e-mail within 48 hours. Maximum 800 characters. </p>
+                        <textarea id="user-comments" name="user-comments" aria-describedby="textarea-help" maxlength="800" placeholder="Type here..."></textarea>
+                    
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
                 <section id="states">
                     <h2>F5 · State and Recovery Specimen</h2>
                     <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep this section separate from the primary blank form when necessary to avoid misleading users.</p>

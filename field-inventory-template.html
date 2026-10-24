@@ -46,14 +46,114 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Example only</td>
-                        <td>Replace</td>
-                        <td>Yes/No</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace or N/A</td>
-                        <td>Replace or none</td>
-                        <td>Replace</td>
+                        <td>First Name</td>
+                        <td>So staff receiving the form know user's first name</td>
+                        <td>Yes</td>
+                        <td>"text"</td>
+                        <td>name = "first-name"</td>
+                        <td>inputmode = "text"</td>
+                        <td>Required</td>
+                        <td>Low sensitivity, keep. First name used to identify user. Staff should only use it for choosing winners/contacting them. </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>So staff receiving the form know user's last name</td>
+                        <td>Yes</td>
+                        <td>"text"</td>
+                        <td>name = "last-name"</td>
+                        <td>inputmode = "text"</td>
+                        <td>Required</td>
+                        <td>Medium sensitivity, keep. Needed to identify the student and verify their graduation date meets with the requirement of the form.</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail Address</td>
+                        <td>So staff receiving the form know user's email if they need to contact them</td>
+                        <td>Yes</td>
+                        <td>"email"</td>
+                        <td>name = "e-mail"</td>
+                        <td>inputmode = "email" autocomplete="email"</td>
+                        <td>Required</td>
+                        <td>Medium sensitivity, keep. Needed to contact student and delete from database/server after they graduate.</td>
+                    </tr>
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>So whoever is reaching back to them knows how to address them</td>
+                        <td>No</td>
+                        <td>"select"</td>
+                        <td>select values = "pronouns" (group of answer choices) </td>
+                        <td>inputmode = "text"</td>
+                        <td>None</td>
+                        <td>Medium sensitivity, keep if needed. Used to communicate with student and have a "do not prefer to say" option in the select options.</td>
+                    </tr>
+                    <tr>
+                        <td>"I confirm that I am graduating in December/Fall 2026"</td>
+                        <td>Indicates whether user is eligible to submit a speech</td>
+                        <td>Yes</td>
+                        <td>"checkbox"</td>
+                        <td>name = "confirmation"</td>
+                        <td>N/A</td>
+                        <td>Required</td>
+                        <td>Low sensitivity, keep. Important to verify student graduation date, don't require them to upload potentially sensitive documents. Verification can be done by staff privately.</td>
+                    </tr>
+                    <tr>
+                        <td>"Please select which celebration you are most interested in/available for student speaker:"</td>
+                        <td>So staff committee know how to sort student submissions/choose the winning speech for each coalition's celebration event.</td>
+                        <td>Yes</td>
+                        <td>"radio"</td>
+                        <td>name = "celebration", values are "CIS","BAC","Rainbow", and "AAPASC"</td>
+                        <td>N/A</td>
+                        <td>Required</td>
+                        <td>Medium sensitivity, keep. Can allude to a student's ethnic identity. No need to ask for personal identification details, just which event they want to apply/participate in.</td>
+                    </tr>
+                    <tr>
+                        <td>"Which degree type are you graduating with?"</td>
+                        <td>So staff know if student has an undergrad or grad degree, could possible have 2 categories for speeches depending on number of submissions/size of graduating population for the coalitions.</td>
+                        <td>Yes</td>
+                        <td>"radio"</td>
+                        <td>name = "degree", values are "undergrad" and "grad"</td>
+                        <td>N/A</td>
+                        <td>Required</td>
+                        <td>Low sensitivity, keep depending on the situation. Used by staff to potentially sort student submissions into 2 categories if they have an influx of submissions.</td>
+                    </tr>
+                    <tr>
+                        <td>"What is/are your major(s)?"</td>
+                        <td>So staff have an idea of what a user's education experience is like, could be used as a deciding factor if committee is having trouble selecting a student speaker.</td>
+                        <td>Yes</td>
+                        <td>"text"</td>
+                        <td>name = "major(s)"</td>
+                        <td>inputmode = "text"</td>
+                        <td>Required, maxlength = "60"</td>
+                        <td>Low sensitivity, keep. Can be used by staff as a final deciding factor if there's difficulty in choosing a winner during the final stage. GPA not asked for.</td>
+                    </tr>
+                    <tr>
+                        <td>"What is/are your minor(s)?"</td>
+                        <td>So staff have an idea of what a user's education experience is like, could be used as a deciding factor if committee is having trouble selecting a student speaker.</td>
+                        <td>No</td>
+                        <td>"text"</td>
+                        <td>name = "minor(s)"</td>
+                        <td>inputmode = "text"</td>
+                        <td>None</td>
+                        <td>Low sensitivity, optionally keep. Can be used by staff as a final deciding factor if there's difficulty in choosing a winner during the final stage. GPA not asked for.</td>
+                    </tr>
+                    <tr>
+                        <td>"Please submit your speech as a file (.pdf, .docx. and .doc accepted)"</td>
+                        <td>So staff are able to read the speech/input it as a valid entry</td>
+                        <td>Yes</td>
+                        <td>"file"</td>
+                        <td>name = "user-file"</td>
+                        <td>N/A</td>
+                        <td>Required, accept=".pdf,.doc,.docx" (this only accepts the file types specified)</td>
+                        <td>Medium sensitivity, keep. Uploaded file could potentially have sensitive metadata/incriminating information about the user. Inform user to not submit any personal information, and ensure any potentially slips are corrected by committee staff. </td>
+                    </tr>
+                    <tr>
+                        <td>"Any questions, comments, or concerns?"</td>
+                        <td>So staff are able to receive any additional questions users might have concerning the event and/or form.</td>
+                        <td>No</td>
+                        <td>textarea</td>
+                        <td>name = "user-comments"</td>
+                        <td>inputmode = "text"</td>
+                        <td>maxLength of 800? characters? will research more</td>
+                        <td>Low sensitivity, keep. Lets staff know if they need to contact a user depending on the comments they write. Potentially could remove them from the running if vulgar/offensive language is detected.</td>
                     </tr>
                 </tbody>
             </table>
