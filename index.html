@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Inclusive Form Flow</title><link rel="stylesheet" href="styles.css">
+        <title>Student Speaker Application Form</title><link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="page-header">
@@ -25,11 +25,11 @@
                     <!-- <p class="help">Replace or extend this group based on your justified field inventory.</p> -->
                     <div class="field">
                         <label for="first-name">First Name (required)</label>
-                        <input id="first-name" name="first-name" type="text" autocomplete="first-name" inputmode = "text" maxlength="50" required>
+                        <input id="first-name" name="first-name" type="text" autocomplete="given-name" inputmode = "text" maxlength="50" required>
                     </div>
                     <div class="field">
                         <label for="last-name">Last Name (required)</label>
-                        <input id="last-name" name="last-name" type="text" autocomplete="last-name" inputmode = "text" maxlength="50" required>
+                        <input id="last-name" name="last-name" type="text" autocomplete="family-name" inputmode = "text" maxlength="50" required>
                     </div>
                     <div class="field">
                         <label for="email">Email address (required)</label>
@@ -49,16 +49,16 @@
                 </fieldset>
                 <fieldset>
                     <legend>F3 · Graduation Date Confirmation</legend>
-                    <p>I confirm that I am graduating in December/Fall 2026. I understand that by selecting this Changemaker Initiatives Staff will conduct an academic check to confirm my graduation date.</p>
+                    <p id="grad-date-confirmation">I confirm that I am graduating in December/Fall 2026. I understand that by selecting this Changemaker Initiatives Staff will conduct an academic check to confirm my graduation date.</p>
                     <div class="confirmation-field">
-                        <input type="checkbox" id="confirmation" name="user-confirmation" value="yes" required>
+                        <input type="checkbox" id="confirmation" name="user-confirmation" value="yes" aria-describedby="grad-date-confirmation">
                         <label for="confirmation">Yes, I confirm.</label>                     
                     </div>
                     <!-- <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p> -->
                 </fieldset>
-                <fieldset>
+                <fieldset aria-describedby="celebration-question">
                     <legend>F3 · Celebration Selection</legend>
-                    <p>Select which celebration you are most interested in AND available for student speaker:</p>
+                    <p id="celebration-question">Select which celebration you are most interested in AND available for student speaker:</p>
                     <label class="choice">
                         <input type="radio" id="CIS" name="celebration" value="CIS" required>
                         CIS (Coalition of International Students) : December 11, 2026 | 10:30am
@@ -78,13 +78,13 @@
                 </fieldset>
                 <fieldset>
                     <legend>F3 · Academic Information</legend>
-                    <div class="field">
-                        <label>Which degree type are you graduating with? (required)</label>
-                        <label for="undergrad-degree">
+                    <div class="field" role="group" aria-labelledby="degree-type-question">
+                        <p id="degree-type-question" class="group-label">Which degree type are you graduating with? (required)</p>
+                        <label class="choice" for="undergrad-degree">
                             <input type="radio" id="undergrad-degree" name="degree" value="undergrad-degree" required>
                             Undergraduate degree
                         </label>
-                        <label for="grad-degree">
+                        <label class="choice" for="grad-degree">
                             <input type="radio" id="grad-degree" name="degree" value="grad-degree">
                             Graduate degree
                         </label> 
@@ -101,18 +101,17 @@
                 <fieldset>
                     <legend>F3 · Speech Submission</legend>
                     <div class="field">
-                        <p>Please upload your speech as a file (only .pdf, .docx. or .doc file types accepted).</p>
-                        <label for="user-file">
-                        <input type="file" id="user-file" name="user-file" accept=".pdf,.doc,.docx" required> 
-                        </label> 
+                        <label for="user-file">Upload your speech here:</label>
+                        <p class="help" id="file-help">Only .pdf, .docx, or .doc files are accepted.</p>
+                        <input type="file" id="user-file" name="user-file" accept=".pdf,.doc,.docx" aria-describedby="file-help" required> 
                     </div>
                 </fieldset>
               
                 <fieldset>  
-                        <label for="user-comments">Questions, Comments, or Concerns?</label>
-                        <p class="help" id="textarea-help">Please write any questions, comments, or concerns regarding the event or this form. A Changemaker Initiatives staff member will reach back via e-mail within 48 hours. Maximum 800 characters. </p>
-                        <textarea id="user-comments" name="user-comments" aria-describedby="textarea-help" maxlength="800" placeholder="Type here..."></textarea>
-                    
+                        <legend>Questions or Comments</legend>
+                        <label for="user-comments">Questions, Comments, or Concerns? (Optional)</label>
+                        <p class="help" id="textarea-help">Please write any questions, comments, or concerns regarding the event and/or form. A Changemaker Initiatives staff member will reach back via e-mail within 48 hours. Maximum 800 characters. </p>
+                        <textarea id="user-comments" name="user-comments" aria-describedby="textarea-help" maxlength="800" placeholder="For example: Will there food provided?"></textarea>
                 </fieldset>
                 <button type="submit">Submit</button>
             </form>

@@ -153,6 +153,9 @@ fieldset {
 label[for="confirmation"],label[for="undergrad-degree"],label[for="grad-degree"]{
     font-weight: normal;
 }
+.group-label { 
+    font-weight: 700; 
+}
 .confirmation-field{
     display:flex;
     justify-content: center;
@@ -168,6 +171,10 @@ legend, h2{
     color:var(--color-surface);
     padding: 0.5rem 1rem;
 }
+#celebration-question{
+    font-weight: 700;
+}
+
 .f{
     margin:0;
     color:var(--color-muted);
@@ -186,7 +193,9 @@ textarea{
     resize:vertical;
 }
 .choice{
+    font-weight: normal;
     display:flex;
+    width: fit-content;
     gap:.65rem;
     align-items:flex-start;
     padding:.5rem 0;
